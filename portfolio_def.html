@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>María Olmedilla | Biomedical Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #e5f6f7;
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://assets.codepen.io/1462889/ecg-lines.svg') repeat;
+      background-size: 100% 100px;
+      opacity: 0.1;
+      z-index: -1;
+      animation: scrollBg 15s linear infinite;
+    }
+
+    @keyframes scrollBg {
+      0% { background-position: 0 0; }
+      100% { background-position: 2000px 1000px; }
+    }
+
+    nav {
+      position: fixed;
+      top: 1rem;
+      right: 2rem;
+      z-index: 10;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    nav a {
+      color: #4fd1c5;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      color: #4fd1c5;
+      animation: glow 3s infinite alternate;
+    }
+
+    .hero .title-animated {
+      font-size: 1.6rem;
+      color: #4fd1c5;
+      margin-top: 1rem;
+      font-weight: 500;
+      animation: pulse 2.5s infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #4fd1c5, 0 0 15px #2c7a7b; }
+      100% { text-shadow: 0 0 15px #38bdf8, 0 0 30px #22d3ee; }
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+    }
+
+    h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #4fd1c5;
+      text-align: center;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(100, 255, 255, 0.1);
+      transition: transform 0.3s;
+      border: 2px solid #4fd1c5;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .skill i {
+      font-size: 2.5rem;
+      color: #60a5fa;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill span {
+      font-weight: 600;
+    }
+
+    .contact-button {
+      display: block;
+      margin: 2rem auto 0;
+      background-color: #4fd1c5;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      color: #0f172a;
+      font-weight: 700;
+      text-align: center;
+      width: fit-content;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .contact-button:hover {
+      background-color: #38bdf8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .skill-item {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+      display: none; /* Oculto inicialmente */
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills & Technologies</a>
+    <a href="#projects">Project Highlights</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1>María Olmedilla</h1>
+    <div class="title-animated">Biomedical Engineer</div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div id="about-text"></div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Technologies</h2>
+    <div id="skills-list">
+      <div class="skill-item">Maths and physical problem solving</div>
+      <div class="skill-item">Software development: Python</div>
+      <div class="skill-item">Machine learning</div>
+      <div class="skill-item">Physiological and anatomical knowledge</div>
+      <div class="skill-item">Databases (SQL)</div>
+      <div class="skill-item">Biomedical equipment and instruments for medical application</div>
+      <div class="skill-item">Hospital engineering (Facilities)</div>
+      <div class="skill-item">Mathematical Optimization</div>
+      <div class="skill-item">Statistical Inference</div>
+      <div class="skill-item">Health Economics and legislation of NHS</div>
+      <div class="skill-item">Digital Systems and Microprocessors (Arduino)</div>
+      <div class="skill-item">Signals processing</div>
+      <div class="skill-item">Medical Imaging</div>
+      <div class="skill-item">Health Information Systems</div>
+      <div class="skill-item">Microsoft Azure</div>
+      <div class="skill-item">Massive data processing</div>
+      <div class="skill-item">Django</div>
+      <div class="skill-item">Javascript</div>
+      <div class="skill-item">Biomechanics</div>
+      <div class="skill-item">Project managing</div>
+      <div class="skill-item">Google Workspace (GSheets, GSlides...)</div>
+      <div class="skill-item">Communication with providers and clients</div>
+      <div class="skill-item">Inbound Marketing</div>
+      <div class="skill-item">Lean Startup, Scrum, Kanban</div>
+      <div class="skill-item">JIRA, Youtrack</div>
+      <div class="skill-item">Looker Studio</div>
+      <div class="skill-item">Generative AI application for efficient work</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Project Highlights</h2>
+    <div class="card-grid">
+      <div class="card"><strong>Cofares</strong><br> Tools to improve pharmaceutical supply chain processes.</div>
+      <div class="card"><strong>Cells IA</strong><br> Dashboard integration in a digital pathology platform.</div>
+      <div class="card"><strong>Hospital Sureste</strong><br> Real-time donor detection dashboard for hospitals.</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <a href="mailto:mariaolmedilla1@gmail.com" class="contact-button">Email Me</a>
+  </section>
+
+  <footer>
+    <p>© 2025 María Olmedilla. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Efecto de escritura para "About Me"
+    const aboutText = `I am a biomedical engineer with a passion for applying technology to improve healthcare systems. With expertise in machine learning, data analysis, and biomedical instrumentation, I strive to innovate within the medical sector to enhance efficiency, accuracy, and patient care. My goal is to bridge the gap between engineering and healthcare through creative and effective solutions.`;
+
+    let index = 0;
+    function typeWriter() {
+      if (index < aboutText.length) {
+        document.getElementById('about-text').innerHTML += aboutText.charAt(index);
+        index++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+    typeWriter();
+
+    // Mostrar habilidades de manera progresiva
+    const skills = document.querySelectorAll('.skill-item');
+    let skillIndex = 0;
+
+    function showSkills() {
+      if (skillIndex < skills.length) {
+        skills[skillIndex].style.display = 'block';
+        skillIndex++;
+        setTimeout(showSkills, 200); // Aparece cada 200 ms
+      }
+    }
+
+    window.onload = () => {
+      showSkills();
+    }
+  </script>
+</body>
+</html>
